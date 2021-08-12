@@ -161,6 +161,7 @@ export default class ScreenCapture extends Component {
     } = this.state;
     const body = document.querySelector('body');
 
+    // To exclude crosshair and backdrop from image
     document.getElementById('crosshairs').style.display = 'none';
     document.getElementById('overlay').style.display = 'none';
 
@@ -171,6 +172,7 @@ export default class ScreenCapture extends Component {
       croppedCanvas.width = cropWidth;
       croppedCanvas.height = cropHeight;
 
+      // TODO: Make this image extend to TOP and LEFT also
       croppedCanvasContext.drawImage(
         canvas,
         cropPositionLeft,
